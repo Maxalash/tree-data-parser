@@ -7,8 +7,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from 'vue'
-import axios from 'axios'
+import { defineComponent, ref, type PropType, watchEffect } from 'vue'
 import TreeNode from './TreeNode.vue'
 
 export interface ITreeData {
@@ -19,23 +18,24 @@ export interface ITreeData {
 
 export default defineComponent({
   name: 'TreeComponent',
+  props: {
+    nodes: {
+      type: Array as PropType<ITreeData[]>,
+      required: true
+    }
+  },
   components: { TreeNode },
-  setup() {
-    const nodes = ref<ITreeData[]>([])
+  setup(props) {
     const rootNodes = ref<ITreeData[]>([])
 
-    const fetchData = async () => {
-      const response = await axios.get('https://64b4c8450efb99d862694609.mockapi.io/tree/items')
-      nodes.value = response.data
-      rootNodes.value = nodes.value.filter((node) => node.parent_id === null)
-    }
-
-    onMounted(() => {
-      fetchData()
+    watchEffect(() => {
+      if (props.nodes) {
+        rootNodes.value = props.nodes?.filter((node) => node.parent_id === null)
+      }
     })
 
     return {
-      nodes,
+      props,
       rootNodes
     }
   }

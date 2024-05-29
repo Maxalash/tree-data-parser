@@ -1,8 +1,14 @@
 {
   "name": "tree-data-parser",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
   "type": "module",
+  "main": "dist/tree-data-parser.umd.js",
+  "module": "dist/tree-data-parser.esm.js",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",

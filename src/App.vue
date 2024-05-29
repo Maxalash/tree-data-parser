@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import TreeComponent from './components/TreeComponent.vue'
+import AppController from './components/AppController.vue'
 </script>
 
 <template>
   <div id="app">
-    <TreeComponent />
+    <AppController />
   </div>
 </template>
