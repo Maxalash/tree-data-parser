@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <tree-node v-for="item in rootNodes" :key="item.id" :node="item" :nodes="nodes" />
+      <tree-node v-for="item in rootNodes" :key="item.id" :node="item" :nodes="nodes" :depth="0" />
     </ul>
   </div>
 </template>
@@ -41,3 +41,12 @@ export default defineComponent({
   }
 })
 </script>
+
+<style>
+ul {
+  padding-left: 0;
+}
+ul li:nth-child(odd) {
+  background-color: #f6f6f7;
+}
+</style>
