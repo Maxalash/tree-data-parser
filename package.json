@@ -1,6 +1,6 @@
 {
   "name": "@maxalash/tree-data-parser",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "private": false,
   "type": "module",
   "main": "dist/tree-data-parser.umd.js",
@@ -9,9 +9,15 @@
     "dist",
     "src"
   ],
+  "description": "Tree Data Parser is a Vue.js component for rendering hierarchical tree structures.",
+  "keywords": [
+    "Typescript",
+    "Vue3",
+    "Tree parser"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Maxalash/tree-data-parser.git"
+    "url": "git@github.com:maxalash/tree-data-parser.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
