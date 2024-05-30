@@ -40,7 +40,7 @@ Here is a basic example of how to use the `TreeComponent` in your Vue.js applica
 ```vue
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue'
-import TreeComponent, { type ITreeData } from 'tree-data-parser'
+import TreeComponent, { type ITreeData } from '@maxalash/tree-data-parser'
 import axios from 'axios'
 
 export default defineComponent({
