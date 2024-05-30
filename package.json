@@ -1,6 +1,6 @@
 {
-  "name": "tree-data-parser",
-  "version": "1.0.1",
+  "name": "@maxalash/tree-data-parser",
+  "version": "1.0.2",
   "private": false,
   "type": "module",
   "main": "dist/tree-data-parser.umd.js",
@@ -9,6 +9,13 @@
     "dist",
     "src"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maxalash/tree-data-parser.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
