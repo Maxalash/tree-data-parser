@@ -22,13 +22,13 @@ Tree Data Parser is a Vue.js component for rendering hierarchical tree structure
 You can install Tree Data Parser using npm or yarn.
 
 ```bash
-npm install tree-data-parser
+npm install @maxalash/tree-data-parser
 ```
 
 or
 
 ```bash
-yarn add tree-data-parser
+yarn add @maxalash/tree-data-parser
 ```
 
 ## Usage
