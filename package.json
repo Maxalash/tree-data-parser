@@ -1,6 +1,6 @@
 {
   "name": "@maxalash/tree-data-parser",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "private": false,
   "type": "module",
   "main": "./dist/tree-data-parser.umd.js",
@@ -18,7 +18,8 @@
   "exports": {
     ".": {
       "import": "./dist/tree-data-parser.es.js",
-      "require": "./dist/tree-data-parser.umd.js"
+      "require": "./dist/tree-data-parser.umd.js",
+      "types": "./dist/index.d.ts"
     },
     "./style.css": "./dist/style.css"
   },
