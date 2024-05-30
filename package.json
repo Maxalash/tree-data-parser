@@ -1,13 +1,15 @@
 {
   "name": "@maxalash/tree-data-parser",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "private": false,
   "type": "module",
   "main": "dist/tree-data-parser.umd.js",
   "module": "dist/tree-data-parser.esm.js",
+  "types": "src/index.d.ts",
   "files": [
     "dist",
-    "src"
+    "src",
+    "lib"
   ],
   "description": "Tree Data Parser is a Vue.js component for rendering hierarchical tree structures.",
   "keywords": [
