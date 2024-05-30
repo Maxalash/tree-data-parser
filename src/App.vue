@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AppController from './components/AppController.vue'
+import AppController from './AppController.vue'
 </script>
 
 <template>

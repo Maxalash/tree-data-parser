@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue'
-import TreeComponent, { type ITreeData } from './TreeComponent.vue'
+import TreeComponent, { type ITreeData } from './components/TreeComponent.vue'
 import axios from 'axios'
 
 export default defineComponent({

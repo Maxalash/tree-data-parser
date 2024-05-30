@@ -15,7 +15,7 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/index.ts'),
+      entry: path.resolve(__dirname, 'src/components/index.ts'),
       name: 'TreeDataParser',
       fileName: (format) => `tree-data-parser.${format}.js`,
       formats: ['es', 'umd']
