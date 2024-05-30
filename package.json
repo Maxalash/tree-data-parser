@@ -1,15 +1,13 @@
 {
   "name": "@maxalash/tree-data-parser",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "private": false,
   "type": "module",
-  "main": "dist/tree-data-parser.umd.js",
-  "module": "dist/tree-data-parser.esm.js",
-  "types": "src/index.d.ts",
+  "main": "./dist/tree-data-parser.umd.js",
+  "module": "./dist/tree-data-parser.esm.js",
+  "types": "./dist/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    "lib"
+    "dist"
   ],
   "description": "Tree Data Parser is a Vue.js component for rendering hierarchical tree structures.",
   "keywords": [
@@ -17,6 +15,13 @@
     "Vue3",
     "Tree parser"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/tree-data-parser.esm.js",
+      "require": "./dist/tree-data-parser.umd.js"
+    },
+    "./style.css": "./dist/style.css"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:maxalash/tree-data-parser.git"
@@ -27,6 +32,7 @@
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
+    "build_package": " vue-tsc && vite build",
     "preview": "vite preview",
     "test:unit": "vitest",
     "test:e2e": "start-server-and-test preview http://localhost:4173 'cypress run --e2e'",
