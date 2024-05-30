@@ -1,61 +1,131 @@
-# tree-data-parser
+Sure, here is the updated `README.md` documentation to reflect the changes regarding the `TreeComponent`:
 
-This template should help get you started developing with Vue 3 in Vite.
+# Tree Data Parser
 
-## Recommended IDE Setup
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Vue.js](https://img.shields.io/badge/Vue.js-3.x-green.svg)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Tree Data Parser is a Vue.js component for rendering hierarchical tree structures. It is designed to be flexible and easy to integrate into your Vue.js projects.
 
-## Type Support for `.vue` Imports in TS
+## Table of Contents
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- [Installation](#installation)
+- [Usage](#usage)
+- [Props](#props)
+- [Events](#events)
+- [Development](#development)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Customize configuration
+## Installation
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+You can install Tree Data Parser using npm or yarn.
 
-## Project Setup
-
-```sh
-yarn
+```bash
+npm install tree-data-parser
 ```
 
-### Compile and Hot-Reload for Development
+or
 
-```sh
-yarn dev
+```bash
+yarn add tree-data-parser
 ```
 
-### Type-Check, Compile and Minify for Production
+## Usage
 
-```sh
-yarn build
+Here is a basic example of how to use the `TreeComponent` in your Vue.js application.
+
+### Example
+
+```vue
+<script lang="ts">
+import { defineComponent, onMounted, ref } from 'vue'
+import TreeComponent, { type ITreeData } from 'tree-data-parser'
+import axios from 'axios'
+
+export default defineComponent({
+  name: 'AppComponent',
+  components: { TreeComponent },
+  setup() {
+    const nodes = ref<ITreeData[]>([])
+
+    const fetchData = async () => {
+      const response = await axios.get('Some server side request')
+      nodes.value = response.data
+    }
+
+    onMounted(() => {
+      fetchData()
+    })
+
+    return {
+      nodes
+    }
+  }
+})
+</script>
+
+<template>
+  <TreeComponent :nodes="nodes" />
+</template>
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+## Props
 
-```sh
-yarn test:unit
-```
+The `TreeComponent` accepts the following props:
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+| Prop    | Type             | Required | Default | Description                                            |
+|---------|------------------|----------|---------|--------------------------------------------------------|
+| `nodes` | Array of Objects | Yes      | N/A     | The array of node objects representing the tree structure. Each node object should have `id`, `parent_id`, and `title`. |
 
-```sh
-yarn test:e2e:dev
-```
+## Events
 
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
+The `TreeComponent` component emits the following events:
 
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
+| Event   | Description                                   |
+|---------|-----------------------------------------------|
+| `toggle` | Emitted when a node is expanded or collapsed. |
 
-```sh
-yarn build
-yarn test:e2e
-```
+## Development
 
-### Lint with [ESLint](https://eslint.org/)
+To set up the development environment:
 
-```sh
-yarn lint
-```
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/tree_data_parser.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd tree_data_parser
+    ```
+3. Install the dependencies:
+    ```bash
+    npm install
+    ```
+4. Run the development server:
+    ```bash
+    npm run dev
+    ```
+
+## Contributing
+
+We welcome contributions! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch:
+    ```bash
+    git checkout -b my-feature-branch
+    ```
+3. Make your changes and commit them:
+    ```bash
+    git commit -m "Description of my feature"
+    ```
+4. Push to the branch:
+    ```bash
+    git push origin my-feature-branch
+    ```
+5. Create a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
